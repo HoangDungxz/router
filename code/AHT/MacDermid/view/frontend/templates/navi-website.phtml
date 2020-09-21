@@ -1,0 +1,40 @@
+
+<?php 
+
+$currentWebsite = $block->getBaseUrl();
+
+
+?>
+
+<li class="choise-website">
+
+	<?php
+
+	echo $block->getLayout()
+
+	->createBlock('Magento\Cms\Block\Block')
+
+	->setBlockId('select-website-link')
+
+	->toHtml();
+
+	?>
+
+
+</li>
+
+<script>
+	require([
+		'jquery'
+		], function ($) {
+			$(document).ready(function() {
+				$("[href='"+'<?php echo $currentWebsite ?>'+"']").parent('li').insertBefore('.choise-website li:first-child');
+				$('.choise-website li:not(.choise-website li:first-child)').css('display', 'none');
+				$('.choise-website li:first-child').click(function(event) {
+					$('.choise-website li:not(.choise-website li:first-child)').toggle();
+					event.preventDefault();
+				});
+			});
+		});
+	</script>
+

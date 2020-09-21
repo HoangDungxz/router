@@ -1,0 +1,35 @@
+<div class="router">
+	<div class="router-main">
+		<div>
+			<div class="router-content">
+				
+				<?php
+
+				echo $block->getLayout()
+
+				->createBlock('Magento\Cms\Block\Block')
+
+				->setBlockId('base-block-content')
+
+				->toHtml();
+
+				?>
+			</div>
+			<div class="router-flag">
+				<?php
+
+				echo $block->getLayout()
+
+				->createBlock('Magento\Cms\Block\Block')
+
+				->setBlockId('base-block-flag')
+
+				->toHtml();
+
+				?>
+			</div>
+		</div>
+	</div>
+</div>
+
+
